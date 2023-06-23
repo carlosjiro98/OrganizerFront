@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+:root {
+    --main-elm: #1a936f;
+    --main-blue-clill: #1089b1;
+    --main-tarawera: #073a4b;
+    --main-tulip: #e7a34b;
+    --main-marzipan: #f7d488;
+}
+/*---------------------------------- ToDo List --------------------------------------*/
+.todo_list_item {
+    width: 85%;
+    /*min-width: 50rem;*/
+    min-height: 4rem;
+    overflow: auto;
+    margin: 1.5rem 0 1.5rem 0;
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+}
+.todo_col {
+    /*background-color:  cadetblue;*/
+}
+.todo_col p {
+    margin: 0;
+}
+.todo_inner_col {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+/*---------------------------------- Detail Button ----------------------------------*/
+.detail_pop_btn {
+    background-color: var(--main-elm);
+    border-radius: 5px;
+    color: white;
+    border: none;
+}
+/*----------------------------------- Contact list ---------------------------------*/
+.contact_list_container {
+    /*background-color: grey;*/
+    margin-top: 2rem;
+    height: 31rem;
+    padding-top: 1rem;
+    overflow: auto;
+}
+.contact_list_item {
+    width: 85%;
+    /*min-width: 50rem;*/
+    min-height: 4rem;
+    overflow: auto;
+    margin: 1.5rem 0 1.5rem 0;
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.contact_col p {
+    margin: 0;
+}
+.contact_col {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.roro {
+    /*background-color:chocolate;*/
+    width:100%;
+}
+/*----------------------------------- Nav Styles -----------------------------------*/
+.nav_container {
+    background-color: var(--main-tarawera);
+    height: 7vh;
+}
+
+/*Modificando el sign in button*/
+.signin_btn {
+    /*background-color: var(--main-blue-clill);*/
+    border-radius:6px;
+    color:white;
+}
+.signin_btn button {
+    color: white;
+    font-family: Oswald;
+    width: 5rem;
+    background-color: var(--main-blue-clill);
+}
+    .signin_btn .dropdown-menu button {
+        color: black;
+        background-color: white;
+    }
+
+.navbar-brand.lol {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2em;
+    letter-spacing: 3px;
+    border: none;
+}
+
+.navOptions_container {
+    width: 50%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 2rem;
+}
+.navOptions_container h5 {
+    color: white;
+    margin: 0;
+}
+/*----------------------------------- No Logged Styles -----------------------------------*/
+.noLogged_main_container {
+    background-image: url('../assets/canoa.jpg');
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    height: 93vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Oswald;
+    font-weight: initial;
+    /*color: #212529;*/
+    color: #edf6f9;
+}
+
+    .noLogged_main_container .welcome_txt {
+        font-weight: normal;
+        font-size: 3.5rem;
+        margin-bottom: 2rem;
+    }
+    .noLogged_main_container .sgnin_txt {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+/*----------------------------------- Side Nav Bar -----------------------------------*/
+.side_main_container {
+    /*border: 2px solid  var(--main-tarawera);*/
+    height: 93vh;
+    width: 14%;
+    min-width: 10rem;
+    position: fixed;
+    top: 7vh;
+    left:0;
+    display: flex;
+    align-items: center;
+}
+.links_container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.links_container a {
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.links_container a div{
+    width: 80%;
+    height: 6vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+    .links_container a div:hover {
+        background-color: lavender;
+    }
+.links_container a div h3 {
+    margin:0;
+}
+
+.links_container .active div {
+    background-color: var(--main-tarawera);
+    color: white;
+}
+    .links_container .active div:hover {
+        background-color: var(--main-tarawera);
+        color: white;
+    }
+
+/*----------------------------------- Home Contacts ToDo Main Container -----------------------------------*/
+.fixed_main_container {
+    /*background-color: brown;*/
+    width: 86%;
+    height: 93%;
+    position: fixed;
+    top: 7vh;
+    left: 14%;
+    overflow: auto;
+
+    padding-top: 2.5rem;
+}
+.fixed_main_container h2 {
+    margin: 0;
+}
