@@ -50,7 +50,7 @@ export function GlobalProvider({ children }) {
     async function RequestAllToDos() {
         setAllToDos(null);
         let toDosList = await getAllToDos();
-        console.log(toDosList);
+        /*console.log(toDosList);*/
         setAllToDos(toDosList);
     }
 

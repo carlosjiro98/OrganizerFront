@@ -1,5 +1,5 @@
 import '../css/App.css'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import CheckLogic from '../components/CheckLogic';
@@ -7,8 +7,10 @@ import Container from 'react-bootstrap/Container';
 import {  PrimaryButton } from '@fluentui/react/lib/Button';
 import { useAllToDosContext, useGetAllToDosContext } from '../Provider/GlobalProvider'
 import { EditSolid12Icon, DeleteIcon, RefreshIcon, AddIcon } from '@fluentui/react-icons-mdl2';
+import { deleteToDo } from '../helpers/organizerApi';
 
-function ContactCard({ toDoData }) {
+function ContactCard({ toDoData, deleteFuntion }) {
+    
     return (
         <Row className="todo_list_item">
 
@@ -33,7 +35,7 @@ function ContactCard({ toDoData }) {
                         </PrimaryButton>
                     </Col>
                     <Col className="todo_col">
-                        <PrimaryButton style={{ backgroundColor: "	#DC3545", border: "none", }}>
+                        <PrimaryButton onClick={() => deleteFuntion(toDoData.id)} style={{ backgroundColor: "	#DC3545", border: "none", }}>
                             <DeleteIcon />
                         </PrimaryButton>
                     </Col>
@@ -47,10 +49,19 @@ function ContactCard({ toDoData }) {
 }
 function ContainerExample() {
     const allToDos = useAllToDosContext();
+    const [displayTodos, setDisplayTodos] = useState(allToDos)
+    useEffect(() => { setDisplayTodos(allToDos) }, [allToDos])
+    async function delteTodoById(id) {
+        console.log("inicie id:" + id);
+        let alltodosX = displayTodos.filter(todo => todo.id !== id)
+        setDisplayTodos(alltodosX)
+        console.log(alltodosX);
+        await deleteToDo(id);
+    }
 
     return (
         <Container className="contact_list_container">
-            {allToDos ? allToDos.map(item => <ContactCard key={item.id} toDoData={item} />) : <h1>Hola</h1>}
+            {displayTodos ? displayTodos.map(item => <ContactCard key={item.id} toDoData={item} deleteFuntion={delteTodoById} />) : <h1>Hola</h1>}
         </Container>
     );
 }
