@@ -6,6 +6,12 @@
     --main-tulip: #e7a34b;
     --main-marzipan: #f7d488;
 }
+/*---------------------------------- PopUp edit-create --------------------------------------*/
+.todo_input {
+    width: 30rem;
+    height: 2.5rem;
+    padding-left: 1rem;
+}
 /*---------------------------------- ToDo List --------------------------------------*/
 .todo_list_item {
     width: 85%;
@@ -35,9 +41,13 @@
 /*---------------------------------- Detail Button ----------------------------------*/
 .detail_pop_btn {
     background-color: var(--main-elm);
-    border-radius: 5px;
     color: white;
     border: none;
+}
+.hover_btn:hover {
+        background-color: lavender;
+        border: none;
+
 }
 /*----------------------------------- Contact list ---------------------------------*/
 .contact_list_container {
