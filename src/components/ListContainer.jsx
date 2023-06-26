@@ -6,11 +6,11 @@ import CheckLogic from '../components/CheckLogic';
 import Container from 'react-bootstrap/Container';
 import { PrimaryButton } from '@fluentui/react/lib/Button';
 import { useAllToDosContext } from '../Provider/GlobalProvider'
-import { EditSolid12Icon, DeleteIcon, RefreshIcon } from '@fluentui/react-icons-mdl2';
-import { deleteToDo } from '../helpers/organizerApi';
+import { DeleteIcon, RefreshIcon } from '@fluentui/react-icons-mdl2';
+import { deleteToDo, postToDo, updateToDo } from '../helpers/organizerApi';
 import { PopUpEditList } from './PopUpEditList';
 import { useGetAllToDosContext } from '../Provider/GlobalProvider'
-function ListCard({ toDoData, deleteFuntion, addFunction, updateFunction }) {
+function ListCard({ toDoData, deleteFuntion, updateFunction }) {
 
     return (
         <Row className="todo_list_item">
@@ -31,7 +31,7 @@ function ListCard({ toDoData, deleteFuntion, addFunction, updateFunction }) {
 
                 <Row className="todo_inner_row">
                     <Col className="todo_col">
-                        <PopUpEditList typeIndicator={false} actualTodo={toDoData} addFunction={addFunction} updateFunction={updateFunction } />
+                        <PopUpEditList typeIndicator={false} actualTodo={toDoData} updateFunction={updateFunction } />
                     </Col>
                     <Col className="todo_col">
                         <PrimaryButton onClick={() => deleteFuntion(toDoData.id)} style={{ backgroundColor: "	#DC3545", border: "none", }}>
@@ -52,16 +52,17 @@ export default function ListContainer() {
     
     useEffect(() => { setDisplayTodos(allToDos) }, [allToDos]);
 
+    //DELETE 
     async function delteTodoById(id) {
     
         let alltodosX = displayTodos.filter(todo => todo.id !== id)
         setDisplayTodos(alltodosX)
         await deleteToDo(id);
     }
-
+    //ADD 
     async function addTodo(name) {
         let lastIndex = displayTodos.length - 1
-        let lastId = displayTodos[lastIndex].id
+        let lastId = displayTodos.length>0 ?  displayTodos[lastIndex].id : 1
         console.log(lastId)
 
         let todo = {
@@ -70,9 +71,14 @@ export default function ListContainer() {
             "isComplete": false
         }
         setDisplayTodos(prevState => [...prevState, todo]);
+        await postToDo({
+            "name": name,
+            "isComplete": false,
+            "secret": "from app"
+        })
     }
-    //falta implementar las llamadas a la api
-    async function updateTodo(name, id) {
+    //UPDATE 
+    async function updateTodo(name, id, isComplete) {
         let todoIndex = displayTodos.findIndex(obj => obj.id === id);
 
         console.log(todoIndex)
@@ -82,13 +88,24 @@ export default function ListContainer() {
             return x
         });
         console.log(displayTodos);
+
+        await updateToDo({
+            "id": id,
+            "name": name,
+            "isComplete": isComplete
+        })
     }
 
     const requestAllToDosData = useGetAllToDosContext();
 
     return (<>
-        <Container className="contact_list_container">
-            {displayTodos ? displayTodos.map(item => <ListCard key={item.id} toDoData={item} deleteFuntion={delteTodoById} updateFunction={updateTodo} />) : <h1>Hola</h1>}
+        <Container className="todo_list_container">
+            {displayTodos
+                ?
+                    displayTodos.map(item => <ListCard key={item.id} toDoData={item} deleteFuntion={delteTodoById} updateFunction={updateTodo} />)
+                :
+                    <div className="loader_con"><div class="loader"></div></div>
+            }
         </Container>
         <br />
 

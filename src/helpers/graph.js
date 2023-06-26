@@ -38,7 +38,7 @@ export async function usersFromGraph(accessToken) {
         .catch(error => console.log(error));
 }
 
-//Getting Users from graph
+//Getting Users Photo from graph
 
 export async function usersPhotoFromGraph(accessToken, id) {
     const headers = new Headers();
@@ -51,7 +51,8 @@ export async function usersPhotoFromGraph(accessToken, id) {
         headers: headers
     };
 
-    return fetch(`https://graph.microsoft.com/v1.0/users/${id}/photo/$value`, options)
-        .then(response => response)
+    return fetch("https://graph.microsoft.com/v1.0/me/photo/$value", options)
+        .then(response => response.blob())
         .catch(error => console.log(error));
 }
+//`https://graph.microsoft.com/v1.0/users/${id}/photo/$value`

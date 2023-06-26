@@ -1,13 +1,12 @@
-import React from 'react';
-import '../css/App.css'
+import { useContactsContext} from '../Provider/GlobalProvider'
+import { PopupModalExample } from '../components/PopUpInfo';
 import { PrimaryButton } from '@fluentui/react/lib/Button';
-import { useContactsContext, useGetContactsContext } from '../Provider/GlobalProvider'
-import '../css/App.css'
+import { ContactIcon } from '@fluentui/react-icons-mdl2';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { PopupModalExample } from '../components/PopUpInfo';
-import { ContactIcon } from '@fluentui/react-icons-mdl2';
+import React from 'react';
+import '../css/App.css';
 
 function ContactCard({ contactData }) {
     return (
@@ -48,19 +47,29 @@ function ContainerExample() {
     
     return (
         <Container className="contact_list_container">
-            {contacts ? contacts.map( item => <ContactCard key={item.givenName} contactData={item} />) : <h1>Hola</h1>}
+            {contacts
+                ?
+                    contacts.map(item => <ContactCard key={item.givenName} contactData={item} />)
+                :
+                    <div className="loader_con"><div class="loader"></div></div>
+            }
         </Container>
     );
 }
 
 export default function Contacts() {
-    /*const contacts = useContactsContext();*/
-    const RequestContactsData = useGetContactsContext();
 
     return (
         <div>
             <center className="fixed_main_container">
                 <h2>CONTACTS</h2>
+
+                <div className="flags_bar">
+                    <div className="flag1"><p>User:</p></div>
+                    <div className="flag2"><p>Email:</p></div>
+                    <div className="flag3"><p>Id:</p></div>
+                </div>
+
                 <ContainerExample />
                 <br/>
                 <PrimaryButton text="Reload" style={{ border: "none", marginLeft: "1rem" }} />

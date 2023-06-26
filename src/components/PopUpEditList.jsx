@@ -27,10 +27,22 @@ const popupStyles = mergeStyleSets({
 
 export const PopUpEditList: React.FunctionComponent = (props) => {
     const [isPopupVisible, { setTrue: showPopup, setFalse: hidePopup }] = useBoolean(false);
+    const [actualName, setActualName] = React.useState("");
+
+    React.useEffect(() => {
+        props.typeIndicator ? setActualName("") : setActualName(props.actualTodo.name);
+    }, [])
+   
     function methodAsign() {
-        props.typeIndicator ? props.addFunction("ey") : props.updateFunction("ey", props.actualTodo.id);
+        props.typeIndicator ? props.addFunction(actualName) : props.updateFunction(actualName, props.actualTodo.id, props.actualTodo.isComplete);
+        setActualName("");
         hidePopup();
     }
+
+    function handleOnChange(e) {
+        setActualName(prev => e.target.value);
+    }
+
     return (
         <>
             {props.typeIndicator
@@ -58,14 +70,14 @@ export const PopUpEditList: React.FunctionComponent = (props) => {
                         <FocusTrapZone>
                             <div role="document" className={popupStyles.content}>
                                 <center>
-                                    {props.typeIndicator ? <h3>Crear</h3> : <h3>Edit</h3>}
+                                    {props.typeIndicator ? <h3>Create</h3> : <h3>Edit</h3>}
                                 </center>
                                 <br />
                                 <p>
                                     <strong>Enter the ToDo:</strong>
                                 </p>
 
-                                <input type="text" className="todo_input" value={!props.typeIndicator ? props.actualTodo.name : ""} />
+                                <input type="text" onChange={handleOnChange} className="todo_input" value={actualName} />
 
                                 <br />
                                 <br />

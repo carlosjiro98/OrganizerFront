@@ -1,6 +1,6 @@
 import React, { createContext, useState, useContext } from 'react';
 import { loginRequest } from '../helpers/authConfig';
-import { callMsGraph, usersFromGraph } from '../helpers/graph';
+import { callMsGraph, usersFromGraph, usersPhotoFromGraph } from '../helpers/graph';
 import { useMsal } from '@azure/msal-react';
 import '../css/App.css';
 import { getAllToDos } from '../helpers/organizerApi';
@@ -62,11 +62,26 @@ export function GlobalProvider({ children }) {
             account: accounts[0],
         })
             .then((response) => {
+
                 callMsGraph(response.accessToken).then((response) => {
-                    setUser(response);
-                    //console.log("------- Users -------");
-                    //console.log(response);
-                });
+                    setUser({
+                        data: response,
+                        photo: ""
+                    });
+                }
+                    ,
+                usersPhotoFromGraph(response.accessToken).then((response) => {
+                    let urlPhoto = URL.createObjectURL(response);
+                    setUser(prev => {
+                        return {
+                            ...prev,
+                            photo: urlPhoto
+                        }
+                    });
+                    console.log(urlPhoto);
+                })
+
+                );
             });
     }
 
