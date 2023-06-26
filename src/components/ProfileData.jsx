@@ -1,10 +1,11 @@
 import React from "react";
-//trying fluentUI
-import { PopupModalExample } from './PopUpInfo.jsx';
+
+
 /**
  * Renders information about the user obtained from MS Graph 
  * @param props
  */
+
 export const ProfileData = (props) => {
     return (
         <div id="profile-div" >
