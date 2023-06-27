@@ -25,12 +25,13 @@ const popupStyles = mergeStyleSets({
     },
 });
 
-export const PopUpEditList: React.FunctionComponent = (props) => {
+export const PopUpEditList = (props) => {
     const [isPopupVisible, { setTrue: showPopup, setFalse: hidePopup }] = useBoolean(false);
     const [actualName, setActualName] = React.useState("");
 
     React.useEffect(() => {
         props.typeIndicator ? setActualName("") : setActualName(props.actualTodo.name);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
    
     function methodAsign() {

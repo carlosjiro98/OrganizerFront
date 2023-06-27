@@ -15,6 +15,7 @@ export default function SideNavar() {
         RequestContactsData();
         RequestProfileData();
         RequestAllToDosData();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
     return (

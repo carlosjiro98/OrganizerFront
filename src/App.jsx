@@ -1,4 +1,5 @@
-﻿import React from 'react';
+// eslint-disable-next-line
+import React from 'react';
 import './css/App.css';
 import { Routes, Route } from 'react-router-dom';
 //Azure

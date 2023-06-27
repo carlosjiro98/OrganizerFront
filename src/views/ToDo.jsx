@@ -8,7 +8,10 @@ export default function ToDo() {
 
     const RequestAllToDosData = useGetAllToDosContext();
 
-    useEffect(() => { RequestAllToDosData(); } , [])
+    useEffect(() => { 
+        RequestAllToDosData(); 
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    } , [])
 
     return (
         <div>
