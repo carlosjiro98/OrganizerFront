@@ -9,6 +9,8 @@
 /coverage
 
 # production
+.vs
+.vscode
 
 # misc
 .DS_Store

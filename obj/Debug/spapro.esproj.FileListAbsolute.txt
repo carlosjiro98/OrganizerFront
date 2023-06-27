@@ -1,2 +1,0 @@
-C:\Users\TeamVenti\Documents\ventiProyects\spapro\spapro\obj\Debug\spapro.esproj.SuggestedBindingRedirects.cache
-C:\Users\TeamVenti\Documents\ventiProyects\spapro\spapro\obj\Debug\spapro.esproj.CoreCompileInputs.cache
