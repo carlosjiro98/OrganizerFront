@@ -2,6 +2,7 @@ import { useUserContext } from '../Provider/GlobalProvider';
 import { ProfileData } from '../components/ProfileData';
 import React from 'react';
 import '../css/App.css';
+import { ContactIcon } from '@fluentui/react-icons-mdl2';
 
 
 const ProfileContent = () => {
@@ -15,7 +16,7 @@ const ProfileContent = () => {
                     <h2>Welcome {graphData && graphData.data.givenName}</h2>
                 </div>
                 <div className="profile_photo_container">
-                    {graphData && <img src={graphData.photo} alt="User Profile" />}
+                    {graphData ? <img src={graphData.photo} alt="User Profile" />: <ContactIcon />}
                 </div>
             </div>
 
