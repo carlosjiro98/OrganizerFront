@@ -2,6 +2,9 @@
   "name": "spapro",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "@azure/msal-browser": "^2.37.0",
     "@azure/msal-common": "^13.0.0",
