@@ -7,10 +7,11 @@
     --main-marzipan: #f7d488;
 }
 
-/*---------------------------------- loader --------------------------------------*/
+/*---------------------------------- flags bar in contacts --------------------------------------*/
 .flags_bar {
     /*background-color: red;*/
-    margin-top: 1rem;
+    width: 100%;
+    margin-top: 4vh;
     display: flex;
 }
 .flags_bar div p {
@@ -54,7 +55,7 @@
 
 /*---------------------------------- profile container --------------------------------------*/
 .profile_container {
-    margin-top: 2rem;
+    margin-top: 4vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,27 +75,39 @@
 }
 /*---------------------------------- Home --------------------------------------*/
 .home_first_container {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction: column;
 }
 .welcome_cotainer h2 {
     font-weight:bolder;
 }
 .profile_photo_container {
     margin: 2rem;
-    width: 15rem;
-    height: 15rem;
-    border-radius:300px;
+    width: 17rem;
+    height: 17rem;
+    border-radius: 200px;
     overflow: hidden;
 
     display: flex;
     justify-content:center;
     align-items:center;
-    box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 25px 2px rgba(0, 0, 0, 0.5);
 }
 .profile_photo_container img {
-    width: 15rem;
-    height: 15rem;
+    width: 17rem;
+    height: 17rem;
+    
+    object-fit: cover;
 }
-    /*---------------------------------- PopUp edit-create --------------------------------------*/
+@media only screen and (min-width: 1921px) {
+    .home_first_container {
+        /*background-color: #e7a34b;*/
+        margin: 5rem 0 5rem 0;
+    }
+  }
+/*---------------------------------- PopUp edit-create --------------------------------------*/
     .todo_input {
         width: 30rem;
         height: 2.5rem;
@@ -103,7 +116,7 @@
 /*---------------------------------- ToDo List --------------------------------------*/
 .todo_list_container {
     margin-top: 1rem;
-    height: 32rem;
+    height: 70vh;
     padding-top: 1rem;
     overflow: auto;
 }
@@ -145,13 +158,13 @@
 .contact_list_container {
     /*background-color: grey;*/
     
-    height: 31rem;
+    height: 67vh;
     padding-top: 1rem;
     overflow: auto;
     
 }
 .contact_list_item {
-    width: 85%;
+    width: 90%;
     /*min-width: 50rem;*/
     min-height: 4rem;
     overflow: auto;
