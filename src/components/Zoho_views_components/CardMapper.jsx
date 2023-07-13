@@ -1,5 +1,7 @@
 import { PopUpZoho } from "./PopUpZoho";
 import '../../css/App.css';
+import { ContactIcon } from '@fluentui/react-icons-mdl2';
+
 export default function CardMapper ({data}) {
     return (
         <div className="mapper_container">
@@ -12,7 +14,7 @@ function Card ({item}) {
     let data = item;
     return (<div className="mapper_card">
         <div className="mapper_card_info">
-            <div>LogoUser {data.Full_Name ? data.Full_Name : data.Account_Name}</div>
+            <div><ContactIcon />  {data.Full_Name ? data.Full_Name : data.Account_Name}</div>
             <div>{data.Phone}</div>
             <div>{data.Email ? data.Email : data.Website}</div>
         </div>
