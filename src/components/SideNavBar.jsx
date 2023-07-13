@@ -36,6 +36,11 @@ export default function SideNavar() {
                         <h3>Todo</h3>
                     </div>
                 </NavLink>
+                <NavLink to="/zoho">
+                    <div>
+                        <h3>Zoho</h3>
+                    </div>
+                </NavLink>
             </div>
         </div>
     )

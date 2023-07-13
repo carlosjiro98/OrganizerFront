@@ -24,7 +24,7 @@ const popupStyles = mergeStyleSets({
     },
 });
 
-export const PopupModalExample: React.FunctionComponent = (props) => {
+export const PopupModalExample = (props) => {
     const [isPopupVisible, { setTrue: showPopup, setFalse: hidePopup }] = useBoolean(false);
     return (
         <>

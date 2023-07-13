@@ -1,0 +1,12 @@
+.hola {
+    margin-bottom: 2rem;
+}
+.hola h2 {
+    margin: 0;
+}
+
+.title_links_container {
+    
+    display: flex;
+    gap: 13%;
+}

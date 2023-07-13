@@ -1,5 +1,5 @@
 import { useContactsContext} from '../Provider/GlobalProvider'
-import { PopupModalExample } from '../components/PopUpInfo';
+import { PopupModalExample } from '../components/Contacts_components/PopUpInfo';
 import { PrimaryButton } from '@fluentui/react/lib/Button';
 import { ContactIcon } from '@fluentui/react-icons-mdl2';
 import Container from 'react-bootstrap/Container';
@@ -62,7 +62,7 @@ export default function Contacts() {
     return (
         <div>
             <center className="fixed_main_container">
-                <h2>CONTACTS</h2>
+                <h2>Contacts</h2>
 
                 <div className="flags_bar">
                     <div className="flag1"><p>User:</p></div>

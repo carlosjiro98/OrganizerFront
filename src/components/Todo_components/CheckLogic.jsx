@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { CheckboxCompositeReversedIcon, CheckboxIcon } from '@fluentui/react-icons-mdl2';
-import { updateToDo } from '../helpers/organizerApi';
+import { updateToDo } from '../../helpers/organizerApi';
 export default function CheckLogic({ data }) {
 
     const [checked, setChecked] = useState(data.isComplete);

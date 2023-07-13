@@ -288,8 +288,9 @@
 .links_container a div{
     width: 80%;
     height: 6vh;
+    padding-left: 2rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     border-radius: 10px;
 }
@@ -311,7 +312,7 @@
 
 /*----------------------------------- Home Contacts ToDo Main Container -----------------------------------*/
 .fixed_main_container {
-    /*background-color: brown;*/
+    /* background-color: brown; */
     width: 86%;
     height: 93%;
     position: fixed;
@@ -319,8 +320,92 @@
     left: 14%;
     overflow: auto;
 
+    display: block;
+
     padding-top: 2.5rem;
 }
 .fixed_main_container h2 {
     margin: 0;
+}
+
+/*-------------------------------- Zoho ----------------------------------------*/
+/*Links*/
+
+.links_zoho_container {
+    
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+.links_zoho_container a {
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.links_zoho_container a div{
+    width: 70%;
+    height: 4vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+    .links_zoho_container a div:hover {
+        background-color: lavender;
+    }
+.links_zoho_container a div p {
+    margin:0;
+}
+
+.links_zoho_container .active div {
+    background-color: var(--main-blue-clill);
+    color: white;
+}
+    .links_zoho_container .active div:hover {
+        background-color: var(--main-tarawera);
+        color: white;
+    }
+
+/*--------------------------------------- zoho ---------------------------------*/
+.mapper_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.mapper_card {
+    width: 90%;
+    /*min-width: 50rem;*/
+    min-height: 4rem;
+    overflow: auto;
+    margin: 1.5rem 0 1.5rem 0;
+    box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.mapper_card_info {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 3rem;
+}
+
+/*----------------------------------------- Zoho Account -----------------------------*/
+.zoho_title_btn {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70%;
 }

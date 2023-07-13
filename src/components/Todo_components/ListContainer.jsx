@@ -1,15 +1,15 @@
-import '../css/App.css'
+import '../../css/App.css'
 import React, { useEffect, useState } from 'react';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
-import CheckLogic from '../components/CheckLogic';
+import CheckLogic from '../Todo_components/CheckLogic';
 import Container from 'react-bootstrap/Container';
 import { PrimaryButton } from '@fluentui/react/lib/Button';
-import { useAllToDosContext } from '../Provider/GlobalProvider'
+import { useAllToDosContext } from '../../Provider/GlobalProvider'
 import { DeleteIcon, RefreshIcon } from '@fluentui/react-icons-mdl2';
-import { deleteToDo, postToDo, updateToDo } from '../helpers/organizerApi';
-import { PopUpEditList } from './PopUpEditList';
-import { useGetAllToDosContext } from '../Provider/GlobalProvider'
+import { deleteToDo, postToDo, updateToDo } from '../../helpers/organizerApi';
+import { PopUpEditList } from '../Todo_components/PopUpEditList';
+import { useGetAllToDosContext } from '../../Provider/GlobalProvider'
 function ListCard({ toDoData, deleteFuntion, updateFunction }) {
 
     return (

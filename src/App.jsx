@@ -7,10 +7,12 @@ import { AuthenticatedTemplate, UnauthenticatedTemplate } from '@azure/msal-reac
 //Views annd components
 import Home from './views/Home';
 import ToDo from './views/ToDo';
+import Zoho from './views/Zoho';
 import NoLogged from './views/NoLogged';
 import Contacts from './views/Contacts';
 import SideNavar from './components/SideNavBar';
 import { PageLayout } from './components/PageLayout';
+
 //provider
 import { GlobalProvider } from './Provider/GlobalProvider'
 
@@ -30,6 +32,7 @@ const MainContent = () => {
                         <Route path="/" element={<Home />} />
                         <Route path="/contacts" element={<Contacts />} />
                         <Route path="/todo" element={<ToDo />} />
+                        <Route path="/zoho/*" element={<Zoho />} />
                      </Routes>
                 </GlobalProvider>
             </AuthenticatedTemplate>

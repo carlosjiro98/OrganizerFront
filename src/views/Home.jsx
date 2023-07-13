@@ -1,5 +1,5 @@
 import { useUserContext } from '../Provider/GlobalProvider';
-import { ProfileData } from '../components/ProfileData';
+import { ProfileData } from '../components/Home_components/ProfileData';
 import React from 'react';
 import '../css/App.css';
 import { ContactIcon } from '@fluentui/react-icons-mdl2';
