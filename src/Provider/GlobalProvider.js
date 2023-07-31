@@ -3,14 +3,14 @@ import { loginRequest } from '../helpers/authConfig';
 import { callMsGraph, usersFromGraph, usersPhotoFromGraph } from '../helpers/graph';
 import { useMsal } from '@azure/msal-react';
 import '../css/App.css';
-import { getAllToDos } from '../helpers/organizerApi';
+//import { getAllToDos } from '../helpers/organizerApi';
 
 //Creating contexts
 const userContext = createContext();
 const getUserContext = createContext();
 const contactsContext = createContext();
 const getContactsContext = createContext();
-const allToDosContext = createContext();
+//const allToDosContext = createContext();
 //const getAllToDosContext = createContext();
 
 //Todos data funtions
