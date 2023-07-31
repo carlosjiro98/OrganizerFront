@@ -9,12 +9,12 @@ export default function SideNavar() {
 
     const RequestProfileData = useGetUserContext();
     const RequestContactsData = useGetContactsContext();
-    const RequestAllToDosData = useGetAllToDosContext();
+    //const RequestAllToDosData = useGetAllToDosContext();
 
     useEffect(() => {
         RequestContactsData();
         RequestProfileData();
-        RequestAllToDosData();
+        //RequestAllToDosData();
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
     
@@ -39,6 +39,11 @@ export default function SideNavar() {
                 <NavLink to="/zoho">
                     <div>
                         <h3>Zoho</h3>
+                    </div>
+                </NavLink>
+                <NavLink to="/planner">
+                    <div>
+                        <h3>Planner</h3>
                     </div>
                 </NavLink>
             </div>

@@ -47,12 +47,12 @@ export function GlobalProvider({ children }) {
     const [allToDos, setAllToDos] = useState(null);
 
     //AllTodos
-    async function RequestAllToDos() {
-        setAllToDos(null);
-        let toDosList = await getAllToDos();
-        //console.log(toDosList);
-        setAllToDos(toDosList);
-    }
+    // async function RequestAllToDos() {
+    //     setAllToDos(null);
+    //     let toDosList = await getAllToDos();
+    //     //console.log(toDosList);
+    //     setAllToDos(toDosList);
+    // } aqui, en ToDo view cambiarlafuncion por default, en SideNavBar descomentar llamada al context
 
     //USER
     function RequestProfileData() {
@@ -110,9 +110,9 @@ export function GlobalProvider({ children }) {
                 <contactsContext.Provider value={contacts}>
                     <getContactsContext.Provider value={RequestContactsleData}>
                         <allToDosContext.Provider value={allToDos}>
-                            <getAllToDosContext.Provider value={RequestAllToDos}>
+                            {/* <getAllToDosContext.Provider value={RequestAllToDos}> */}
                                 {children}
-                            </getAllToDosContext.Provider>
+                            {/* </getAllToDosContext.Provider> */}
                         </allToDosContext.Provider>
                     </getContactsContext.Provider>
                 </contactsContext.Provider>

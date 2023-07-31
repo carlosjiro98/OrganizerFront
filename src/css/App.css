@@ -409,3 +409,291 @@
     align-items: center;
     gap: 70%;
 }
+/*----------------------------------------- Planner view -----------------------------*/
+.planner_header{
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+}
+.groups_btn {
+    width: 33.33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20%;
+}
+.planner_title {
+    width: 33.33%;
+}
+.planner_title h2 {
+    margin: 0
+}
+.planner_info h6 {
+    margin: 0;
+}
+.planner_info {
+    width: 33.33%;
+    height: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-left: 2rem;
+}
+/*----------------------------------------- Plans Display -----------------------------*/
+.plansDisplay_container {
+    /* background-color: #a12424; */
+    margin-top: 3rem;
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+.plansDisplay_card{
+    background-color: #faf2ac;
+    border-radius: 10px;
+    height: 6rem;
+    display: flex;
+    cursor: pointer;
+}
+.planIcon{
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 1.7rem;
+}
+.planInfo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/*----------------------------------------- buckets Display -----------------------------*/
+.bucketsDisplay_container {
+}
+.bucket_title {
+     background-color: white;
+     width: 97%;
+     height: 2rem;
+     border-radius: 5px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 0 1rem 0 1rem;
+}
+.addIcon:hover  {
+    background-color: #dbdbdb;
+    border-radius: 3px;
+}
+.bucketsDisplay_info {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+.bucket_card_container {
+    overflow: auto;
+    height: 74vh;
+    width: 98%;
+    display: flex;
+    gap: 1rem;
+}
+/* -------------------- AQUI */
+.bucket_card {
+    background-color: #ecebeb;
+    overflow: auto;
+    border-radius: 5px;
+    width: 19.4rem;
+    flex-shrink: 0;
+    padding-top: 0.5rem;
+}
+.addBucketCard{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.addBucketCard:hover {
+    background-color: rgb(201, 201, 201);
+    border-radius: 5px;
+}
+/*----------------------------------------- cards -----------------------------*/
+.cardsInner_container {
+    /* background-color: #1089b1; */
+    height: 94%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    padding-top: 0.7rem;
+}
+.taskCard {
+    background-color: white;
+    box-shadow: 0px 3px 10px -5px rgb(124, 124, 124);
+    width: 97%;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.taskCard:hover {
+    background-color: rgb(247, 247, 247);
+}
+.taskCard_header p {
+    margin: 0;
+}
+.taskCard_header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.2rem;
+}
+.checklist_preview{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.TaskCard_btn_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+/*----------------------------------------- Create task -----------------------------*/
+.createTaskForm{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-height: 29rem;
+    overflow: auto;
+}
+.createTaskForm div input {
+    background-color: #e6eef0;
+    border: none;
+    height: 2rem;
+    padding: 0 0.5rem 0 0.5rem;
+    border-radius: 5px  ;
+}
+.createTaskForm div input:focus {
+    background-color: #ffffff;
+    border: none;
+}
+.testArea_check{
+    background-color: #e6eef0;
+    border: none;
+    padding: 0.5rem 0.5rem 0 0.5rem;
+    border-radius: 5px  ;
+    width: 100%;
+    margin-top: 0.5rem;
+
+}
+.testArea_check:focus {
+    background-color: #ffffff;
+    border: none;
+} 
+.createTask_Description span{
+    font-weight: bold;
+}
+
+.createTask_Title input{
+    width: 100%;
+    margin-top: 0.5rem;
+}
+.createTask_Title span{
+    font-weight: bold;
+}
+
+
+.createTask_Checklist input{
+    width: 80%;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.createTask_Checklist span{
+    font-weight: bold;
+}
+.createTask_Checklist button {
+    height: 2rem;
+    margin-left: 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color:#1a936f;
+    color: white;
+    font-weight: bold;
+    width: 3rem;
+}
+
+.createTask_Checklist button:hover {
+    background-color:#115742;
+}
+.createTask_btn{
+    flex-shrink: 0;
+    height: 2.5rem;
+    border-radius: 5px;
+    border: none;
+    background-color:#1089b1;
+    color: white;
+    font-weight: bold;
+}
+/*----------------------------------------- CheckItemsDisplay -----------------------------*/
+
+.CheckItemsDisplay_container{
+    background-color: #ebebeb;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem 0 0.2rem 0;
+}
+.checkList_card span{
+    font-weight: lighter;
+}
+.checkList_card {
+    margin: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+.itemName {
+    margin: 0 1rem;
+}
+
+/*----------------------------------------- TaskCard Detail -----------------------------*/
+.taskDetail_title_container{
+    margin:0.5rem 0 1rem 0;
+}
+.titleInput_Detail {
+    background-color: #e6eef0;
+    border: none;
+    height: 2rem;
+    width: 100%;
+    padding: 0 0.5rem 0 0.5rem;
+    border-radius: 5px;
+    font-weight:500;
+    font-size: 1.5rem;
+
+}
+.titleNoMod:hover{
+    cursor: pointer;
+    background-color: #e6eef0;
+    border-radius: 5px;
+}
+.algo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.createItemInput{
+    background-color: #e6eef0;
+    border: none;
+    padding: 0 0.5rem 0 0.5rem;
+    border-radius: 5px  ;
+    width: 100%;
+    margin-top: 0.5rem;
+    height: 2rem;
+}

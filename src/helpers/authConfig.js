@@ -15,8 +15,8 @@ export const msalConfig = {
     auth: {
         clientId: "2f8add10-b98c-471a-8991-648f888d136e",
         authority: "https://login.microsoftonline.com/d1d221ab-3915-41f9-8615-6c6e27a35b5f",
-        //redirectUri: "http://localhost:3000", 
-        redirectUri: "https://jolly-island-0ee86cb10.3.azurestaticapps.net/",
+        redirectUri: "http://localhost:3000", 
+        //redirectUri: "https://jolly-island-0ee86cb10.3.azurestaticapps.net/",
     },
     cache: {
         cacheLocation: "sessionStorage", // This configures where your cache will be stored

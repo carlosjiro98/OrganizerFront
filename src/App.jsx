@@ -12,6 +12,7 @@ import NoLogged from './views/NoLogged';
 import Contacts from './views/Contacts';
 import SideNavar from './components/SideNavBar';
 import { PageLayout } from './components/PageLayout';
+import Planner from './views/Planner';
 
 //provider
 import { GlobalProvider } from './Provider/GlobalProvider'
@@ -33,6 +34,7 @@ const MainContent = () => {
                         <Route path="/contacts" element={<Contacts />} />
                         <Route path="/todo" element={<ToDo />} />
                         <Route path="/zoho/*" element={<Zoho />} />
+                        <Route path="/planner" element={<Planner />} />
                      </Routes>
                 </GlobalProvider>
             </AuthenticatedTemplate>

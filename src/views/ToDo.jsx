@@ -4,7 +4,7 @@ import ListContainer from '../components/Todo_components/ListContainer';
 import { useEffect } from 'react';
 import { useGetAllToDosContext } from '../Provider/GlobalProvider';
 
-export default function ToDo() {
+function ToDox() {
 
     const RequestAllToDosData = useGetAllToDosContext();
 
@@ -20,6 +20,17 @@ export default function ToDo() {
                 
                 <ListContainer />
                 
+            </center>
+        </div>
+    )
+}
+
+export default function ToDo() {
+
+    return (
+        <div>
+            <center className="fixed_main_container">
+                <h2>Temporarily disabled</h2>
             </center>
         </div>
     )
