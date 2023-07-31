@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../css/App.css';
-import { useGetUserContext, useGetContactsContext, useGetAllToDosContext } from '../Provider/GlobalProvider';
+import { useGetUserContext, useGetContactsContext } from '../Provider/GlobalProvider';
 
 
 export default function SideNavar() {

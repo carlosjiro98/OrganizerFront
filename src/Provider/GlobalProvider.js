@@ -11,15 +11,15 @@ const getUserContext = createContext();
 const contactsContext = createContext();
 const getContactsContext = createContext();
 const allToDosContext = createContext();
-const getAllToDosContext = createContext();
+//const getAllToDosContext = createContext();
 
 //Todos data funtions
-export function useAllToDosContext() {
-    return useContext(allToDosContext);
-}
-export function useGetAllToDosContext() {
-    return useContext(getAllToDosContext);
-}
+// export function useAllToDosContext() {
+//     return useContext(allToDosContext);
+// }
+// export function useGetAllToDosContext() {
+//     return useContext(getAllToDosContext);
+// }
 
 //User data functions
 export function useUserContext() {
@@ -44,7 +44,7 @@ export function GlobalProvider({ children }) {
     const [user, setUser] = useState(null);
     const [contacts, setContacts] = useState(null);
     //todos states
-    const [allToDos, setAllToDos] = useState(null);
+    //const [allToDos, setAllToDos] = useState(null);
 
     //AllTodos
     // async function RequestAllToDos() {
@@ -109,11 +109,11 @@ export function GlobalProvider({ children }) {
             <getUserContext.Provider value={RequestProfileData}>
                 <contactsContext.Provider value={contacts}>
                     <getContactsContext.Provider value={RequestContactsleData}>
-                        <allToDosContext.Provider value={allToDos}>
+                        {/* <allToDosContext.Provider value={allToDos}> */}
                             {/* <getAllToDosContext.Provider value={RequestAllToDos}> */}
                                 {children}
                             {/* </getAllToDosContext.Provider> */}
-                        </allToDosContext.Provider>
+                        {/* </allToDosContext.Provider> */}
                     </getContactsContext.Provider>
                 </contactsContext.Provider>
             </getUserContext.Provider>
