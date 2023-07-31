@@ -2,7 +2,6 @@ import { EntitlementPolicyIcon } from '@fluentui/react-icons-mdl2';
 import {TaskPopUp} from './TaskPopUp';
 import {CreateTaskPopUp} from './CreateTaskPopUp';
 import { NewBucketPopUp } from './NewBucketPopUp';
-import { useEffect } from 'react';
 
 export default function PlannerDisplay ({ selectedPlanBuckets ,selectedGroupPlans, handleSelectPlan, infoP, selectedPlanTasks, refreshPlanTasks, refreshPlanBuckets })  {
     
