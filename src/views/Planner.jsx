@@ -102,7 +102,7 @@ export default function Planner() {
         </div>
     )
 }
-
+//Show list of groups
 function GroupDisplay ({groups, handleSelectGroup}) {
     return(
         <div className="plansDisplay_container">
