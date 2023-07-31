@@ -2,6 +2,7 @@ import { EntitlementPolicyIcon } from '@fluentui/react-icons-mdl2';
 import {TaskPopUp} from './TaskPopUp';
 import {CreateTaskPopUp} from './CreateTaskPopUp';
 import { NewBucketPopUp } from './NewBucketPopUp';
+import { useEffect } from 'react';
 
 export default function PlannerDisplay ({ selectedPlanBuckets ,selectedGroupPlans, handleSelectPlan, infoP, selectedPlanTasks, refreshPlanTasks, refreshPlanBuckets })  {
     
@@ -61,9 +62,15 @@ function BucketsDisplay ({selectedPlanBuckets, infoP, selectedPlanTasks, refresh
                                 <h6 style={{margin:"0"}}>
                                     {e.name}
                                 </h6>
-                                <CreateTaskPopUp bucketInfo={e} refreshPlanTasks={refreshPlanTasks} />
+                                <CreateTaskPopUp bucketInfo={e} 
+                                                 refreshPlanTasks={refreshPlanTasks}
+                                />
                             </div>
-                            <TasksCardDisplay refreshPlanTasks={refreshPlanTasks} selectedPlanTasks={selectedPlanTasks} bucketId={e.id}  />
+                            <TasksCardDisplay refreshPlanTasks={refreshPlanTasks} 
+                                              selectedPlanTasks={selectedPlanTasks} 
+                                              bucketId={e.id}
+                                              selectedPlanBuckets={selectedPlanBuckets}  
+                            />
                         </div>
                     ))
                     ) : (
@@ -82,12 +89,12 @@ function BucketsDisplay ({selectedPlanBuckets, infoP, selectedPlanTasks, refresh
     )
 }
 
-function TasksCardDisplay ({selectedPlanTasks, bucketId, refreshPlanTasks}) {
+function TasksCardDisplay ({selectedPlanTasks, bucketId, refreshPlanTasks, selectedPlanBuckets}) {
     const tasksByBucket = selectedPlanTasks.filter(e => e.bucketId === bucketId);
     return (
         <div className='cardsInner_container'>
             {tasksByBucket ? tasksByBucket.map(e => (
-                <TaskPopUp refreshPlanTasks={refreshPlanTasks} key={e.id} task={e}  />
+                <TaskPopUp refreshPlanTasks={refreshPlanTasks} key={e.id} task={e} selectedPlanBuckets={selectedPlanBuckets} />
                 // <div key={e.id}>
                 //     {e.title}
                 // </div>

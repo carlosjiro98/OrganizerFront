@@ -191,15 +191,3 @@ export async function createBucket(accessToken, body) {
         .catch(error => console.log(error));
 }
 
-/* 
-Get task detail
-https://graph.microsoft.com/v1.0/planner/tasks/7ZaYDvFVsE6bH66OBmubbGUAJj5Z/details
-
-Patch task detail
-https://graph.microsoft.com/v1.0/planner/tasks/7ZaYDvFVsE6bH66OBmubbGUAJj5Z/details
-headers: 
-Content-type: application/json
-Prefer: return=representation
-If-Match: "JzEtVGFzayAgQEBAQEBAQEBAQEBAQEBAWCc="
-
- */

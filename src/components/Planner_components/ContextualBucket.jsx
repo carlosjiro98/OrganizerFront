@@ -1,6 +1,28 @@
+import { useEffect } from 'react';
 import Dropdown from 'react-bootstrap/Dropdown';
+import {patchTask} from '../../helpers/plannerApi';
+import useGraphToken from '../../helpers/hooks/useGraphtoken';
 
-function ContextualBucket() {
+function ContextualBucket({selectedPlanBuckets, task, refreshPlanTasks}) {
+
+  const {requestAccesToken} = useGraphToken();
+  
+  // useEffect(()=>{
+  //   console.log(buckets)
+  // },[])
+
+  async function handleOnSelect (e) {
+    const etag = task['@odata.etag'];
+    //console.log(etag)
+    const body = {
+      bucketId: e.id
+    } 
+    //console.log(e.id);
+    const token = await requestAccesToken();
+    await patchTask(token, body, etag, task.id);
+    refreshPlanTasks(task.planId);
+    
+  }
     
   return (
     <Dropdown>
@@ -9,12 +31,15 @@ function ContextualBucket() {
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
-        {/* {selectedGroupPlans ? selectedGroupPlans.map(e =>(
-            <Dropdown.Item onClick={() =>handleSelectPlan(e)} key={e.id}>{e.title}</Dropdown.Item>
-        )) : <Dropdown.Item onClick={() => alert("Please select a group")} key={555}>Please select a group</Dropdown.Item> } */}
-        <Dropdown.Item onClick={() => alert("Please select a group")}>To Do</Dropdown.Item>
-        <Dropdown.Item onClick={() => alert("Please select a group")}>Done</Dropdown.Item>
-        <Dropdown.Item onClick={() => alert("Please select a group")}>In Progress</Dropdown.Item>
+
+        {selectedPlanBuckets 
+                  ? 
+                  selectedPlanBuckets.map(e =>(
+                      <Dropdown.Item onClick={() =>handleOnSelect(e)} key={e.id}>{e.name}</Dropdown.Item>)) 
+                  : 
+                    <Dropdown.Item onClick={() => alert("Please select a group")} key={555}>Loading ...</Dropdown.Item> 
+        }
+
       </Dropdown.Menu>
     </Dropdown>
   );

@@ -5,7 +5,7 @@ import { useBoolean } from '@fluentui/react-hooks';
 import ContextualBucket from './ContextualBucket';
 import '../../css/App.css';
 import useGraphToken from '../../helpers/hooks/useGraphtoken';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CheckItemsDisplay from './CheckItemsDisplay';
 import CheckTaskLogicCard from './CheckTaskLogicCard';
 
@@ -31,7 +31,7 @@ const popupStyles = mergeStyleSets({
     },
 });
 
-export const TaskPopUp = ({task, refreshPlanTasks}) => {
+export const TaskPopUp = ({task, refreshPlanTasks, selectedPlanBuckets}) => {
     const {requestAccesToken} = useGraphToken();
     const [isPopupVisible, { setTrue: showPopup, setFalse: hidePopup }] = useBoolean(false);
     const [taskDetails, setTaskDetails] = useState(null);
@@ -98,6 +98,7 @@ export const TaskPopUp = ({task, refreshPlanTasks}) => {
         refreshPlanTasks(task.planId);
     }
 
+
     return (
         <>
             <div className='taskCard'>
@@ -110,7 +111,7 @@ export const TaskPopUp = ({task, refreshPlanTasks}) => {
                 </div>
                 <div className='TaskCard_btn_container'>
                     <PrimaryButton text='Detail' onClick={() => handleOnOpen(task.id)} style={{borderRadius:"5px", backgroundColor:"#1a936f", border:"none", width: "6rem", height:"1.8rem"}} />
-                    <ContextualBucket />
+                    <ContextualBucket selectedPlanBuckets={selectedPlanBuckets} refreshPlanTasks={refreshPlanTasks} task={task} />
                 </div>
                 
             </div>
